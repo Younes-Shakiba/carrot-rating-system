@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrot Rating System</title>
+    <script src="https://unpkg.com/@rive-app/webgl2@latest"></script>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #262626;
+    "
+  >
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+      const r = new rive.Rive({
+        src: "./carrot-rating-system.riv",
+        // OR the path to a discoverable and public Rive asset
+        // src: '/public/example.riv',
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        autoBind: true,
+        // artboard: "Artboard", // Optional. If not supplied the default is selected
+        stateMachine: "State Machine 1",
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>
+  </body>
+</html>
